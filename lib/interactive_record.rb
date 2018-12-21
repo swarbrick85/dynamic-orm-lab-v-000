@@ -54,7 +54,7 @@ class InteractiveRecord
   end
   
   def self.find_by(pair)
-    
+    key = pair.keys
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute} = '#{name}'"
     DB[:conn].execute(sql)
   end
