@@ -54,10 +54,9 @@ class InteractiveRecord
   end
   
   def self.find_by(pair)
-    key = pair.keys.flatten[0]
+    attribute = pair.keys.flatten[0]
     value = pair.values.flatten[0]
-    binding.pry 
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute} = '#{name}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute} = '#{value}'"
     DB[:conn].execute(sql)
   end
 end
